@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+  <id><![CDATA[[OCMOD] Add description to cart /system/library/cart/cart.php]]></id>
+  <name><![CDATA[[OCMOD] Add description to cart /system/library/cart/cart.php]]></name>
+  <code>knns-system-library-cart-add-description</code>
+  <version>0.1.0</version>
+  <author><![CDATA[digital4u - <font color="#7c008c"><b>Nikolas Branis</b></font>]]></author>
+  <link>https://www.digital4u.gr/</link>
+  <file path="system/library/cart/cart.php" error="log">
+    <operation error="skip">
+      <search><![CDATA['model'           => $product_query->row['model'],]]></search>
+      <add position="after"><![CDATA[
+          'description'     => $product_query->row['description'],
+      ]]></add>
+    </operation>
+  </file>
+  <file path="catalog/controller/checkout/cart.php" error="log">
+    <operation error="skip">
+      <search><![CDATA['model'     => $product['model'],]]></search>
+      <add position="after"><![CDATA[
+          'description' => mb_substr(strip_tags(html_entity_decode($product['description'])), 0, mb_strpos(strip_tags(html_entity_decode($product['description'])), '.')),
+      ]]></add>
+    </operation>
+  </file>
+</modification>
