@@ -4,8 +4,8 @@
   <name><![CDATA[[OCMOD] Add description to cart /system/library/cart/cart.php]]></name>
   <code>knns-system-library-cart-add-description</code>
   <version>0.1.0</version>
-  <author><![CDATA[digital4u - <font color="#7c008c"><b>Nikolas Branis</b></font>]]></author>
-  <link>https://www.digital4u.gr/</link>
+  <author><![CDATA[<font color="#7F458C"><b>kanenas.net (aka Nikolas Branis)</b></font> - nbran@kanenas.net]]></author>
+  <link>https://kanenas.net/</link>
   <file path="system/library/cart/cart.php" error="log">
     <operation error="skip">
       <search><![CDATA['model'           => $product_query->row['model'],]]></search>
